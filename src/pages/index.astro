@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import alexLogo from '../assets/img/alex.png?url';
 import LinkedInIcon from '../assets/icons/LinkedIn.astro';
-// import LinkedInIcon from '../assets/icons/linkedin.astro';
+import Social from '../components/Social.astro';
+import GitHubIcon from '../assets/icons/GitHub.astro';
 ---
 
 <Layout title='Welcome to Astro.'>
@@ -19,14 +20,16 @@ import LinkedInIcon from '../assets/icons/LinkedIn.astro';
         together, please don't hesitate to reach out.
       </h2>
 
-      <ul>
-        <li>
-          <a href='https://www.linkedin.com/in/pintodiaz/' target="_blank">
-            <LinkedInIcon class='w-6 h-6' />
-            LinkedIn
-          </a>
-        </li>
-      </ul>
+      <nav class='flex gap-x-2'>
+        <Social href='https://www.linkedin.com/in/pintodiaz/'>
+          <LinkedInIcon class='w-6 h-6' />
+          LinkedIn
+        </Social>
+        <Social href='https://github.com/alexpintodiaz'>
+          <GitHubIcon class='w-6 h-6' />
+          GitHub
+        </Social>
+      </nav>
     </section>
   </main>
 </Layout>
