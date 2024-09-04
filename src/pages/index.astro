@@ -6,12 +6,16 @@ import Social from '../components/Social.astro';
 import GitHubIcon from '../assets/icons/GitHub.astro';
 ---
 
-<Layout title='Welcome to Astro.'>
+<Layout title='Alex Portfolio'>
   <main>
-    <section class='w-full lg:w-[740px] mx-auto py-44'>
-      <img class='rounded-full w-12 h-12' src={alexLogo} alt='Portfolio Logo' />
-      <h1 class='text-white text-5xl font-bold flex flex-row gap-x-4 pb-10'>
-        Hi, Im Alex.
+    <section class='w-full lg:w-[740px] mx-auto py-10'>
+      <img
+        class='rounded-full w-12 h-12 mb-4'
+        src={alexLogo}
+        alt='Portfolio Logo'
+      />
+      <h1 class='text-white text-5xl font-bold flex flex-row gap-x-4 pb-6'>
+        Hi, Im Alex
       </h1>
       <h2 class='text-2xl opacity-80 text-wrap'>
         Frontend developer with experience building web applications with React
@@ -20,7 +24,7 @@ import GitHubIcon from '../assets/icons/GitHub.astro';
         together, please don't hesitate to reach out.
       </h2>
 
-      <nav class='flex gap-x-2'>
+      <nav class='flex gap-x-3 mt-3'>
         <Social href='https://www.linkedin.com/in/pintodiaz/'>
           <LinkedInIcon class='w-6 h-6' />
           LinkedIn
