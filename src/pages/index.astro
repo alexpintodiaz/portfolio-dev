@@ -1,17 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro'
 import alexLogo from '../assets/img/alex.png?url'
-import LinkedInIcon from '../assets/icons/LinkedIn.astro'
-import Social from '../components/Social.astro'
+import Experience from '../components/Experience.astro'
 import GitHubIcon from '../assets/icons/GitHub.astro'
+import Layout from '../layouts/Layout.astro'
+import LinkedInIcon from '../assets/icons/LinkedIn.astro'
 import MailIcon from '../assets/icons/Mail.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+import Social from '../components/Social.astro'
 ---
 
 <Layout
   title='Alex Portfolio - Web Developer and Programmer'
   description='Hire Alex to create your web application. Web Developer. Specialized in creating fullstack applications.'>
   <main>
-    <section class='w-full lg:w-[740px] mx-auto py-10'>
+    <SectionContainer>
       <img
         class='rounded-full size-12 mb-4'
         src={alexLogo}
@@ -41,6 +43,10 @@ import MailIcon from '../assets/icons/Mail.astro'
           Contact me
         </Social>
       </nav>
-    </section>
+    </SectionContainer>
+
+    <SectionContainer>
+      <Experience />
+    </SectionContainer>
   </main>
 </Layout>
