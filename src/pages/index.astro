@@ -7,22 +7,24 @@ import LinkedInIcon from '../assets/icons/LinkedIn.astro'
 import MailIcon from '../assets/icons/Mail.astro'
 import SectionContainer from '../components/SectionContainer.astro'
 import Social from '../components/Social.astro'
+import Projects from '../components/Projects.astro'
 ---
 
 <Layout
   title='Alex Portfolio - Web Developer and Programmer'
   description='Hire Alex to create your web application. Web Developer. Specialized in creating fullstack applications.'>
-  <main>
+  <main class='px-4'>
     <SectionContainer class='pt-12 pb-8'>
       <img
         class='rounded-full size-12 mb-4'
         src={alexLogo}
         alt='Portfolio Logo'
       />
-      <h1 class='text-white text-5xl font-bold flex flex-row gap-x-4 pb-6'>
+      <h1
+        class='text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6'>
         Hi, Im Alex
       </h1>
-      <h2 class='text-2xl opacity-80 text-wrap'>
+      <h2 class='text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]'>
         Frontend developer with experience building web applications with React
         and TypeScript, always aiming to deliver high quality code that is
         readable, maintainable and scalable. If you think we could work
@@ -48,6 +50,11 @@ import Social from '../components/Social.astro'
     <SectionContainer id='experience'>
       <h2 class='text-2xl font-semibold mb-5'>Experience</h2>
       <Experience />
+    </SectionContainer>
+
+    <SectionContainer id='projects'>
+      <h2 class='text-2xl font-semibold mb-5'>Projects</h2>
+      <Projects />
     </SectionContainer>
   </main>
 </Layout>

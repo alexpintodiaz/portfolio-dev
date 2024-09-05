@@ -1,0 +1,56 @@
+---
+import Tailwind from '../assets/icons/Tailwind.astro'
+
+const TAGS = {
+  NEXT: {
+    name: 'Next.js',
+    class: 'bg-black text-white',
+    icon: Tailwind,
+  },
+  TAILWIND: {
+    name: 'Tailwind CSS',
+    class: 'bg-[#003159] text-white',
+    icon: Tailwind,
+  },
+}
+
+const PROJECTS = [
+  {
+    title: 'ATM Simulator',
+    description:
+      'Both Frontend and Backend created from scratch. I used React, TypeScript, and Tailwind. DB in Mongo DB. Backend in Node.js with Nest',
+    link: 'https://atm-simulator-frontend.vercel.app/',
+    github: [
+      'https://github.com/alexpintodiaz/atm-simulator-frontend',
+      'https://github.com/alexpintodiaz/atm-simulator-backend',
+    ],
+    image: '/projects/atmsim.png',
+    // tags: ['React', 'TypeScript', 'Tailwind', 'MongoDB', 'Node.js', 'Nest'],
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+]
+---
+
+{
+  PROJECTS.map(({ title, description, link, github, image, tags }) => (
+    <article>
+      <h3 class='text-lg font-semibold text-neutral-200 dark:text-white'>
+        {title}
+      </h3>
+      <p class='text-base font-normal text-gray-200 text-pretty'>
+        {description}
+      </p>
+      <ul class="flex flex-row gap-x-2">
+        {tags.map((tag) => (
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-1`}>
+              <tag.icon class='size-6' />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img class='rounded shadow-2xl shadow-white/10' src={image} alt={title} />
+    </article>
+  ))
+}
