@@ -1,5 +1,5 @@
 ---
-import Tailwind from '../assets/icons/Tailwind.astro'
+import Tailwind from '@/assets/icons/Tailwind.astro'
 
 const TAGS = {
   NEXT: {
@@ -44,7 +44,7 @@ const PROJECTS = [
         {tags.map((tag) => (
           <li>
             <span
-              class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-1`}>
+              class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-1 border border-white/10`}>
               <tag.icon class='size-6' />
               {tag.name}
             </span>
