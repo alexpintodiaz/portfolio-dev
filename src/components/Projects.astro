@@ -1,11 +1,12 @@
 ---
+import React from '@/assets/icons/React.astro'
 import Tailwind from '@/assets/icons/Tailwind.astro'
 
 const TAGS = {
   NEXT: {
-    name: 'Next.js',
-    class: 'bg-black text-white',
-    icon: Tailwind,
+    name: 'React',
+    class: 'bg-[#087EA4]/25 text-white',
+    icon: React,
   },
   TAILWIND: {
     name: 'Tailwind CSS',
@@ -44,7 +45,7 @@ const PROJECTS = [
         {tags.map((tag) => (
           <li>
             <span
-              class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-1 border border-white/10`}>
+              class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 my-2 px-2 border border-white/10`}>
               <tag.icon class='size-6' />
               {tag.name}
             </span>
