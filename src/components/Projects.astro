@@ -1,6 +1,8 @@
 ---
 import React from '@/assets/icons/React.astro'
 import Tailwind from '@/assets/icons/Tailwind.astro'
+import ExpButton from './ExpButton.astro'
+import GitHubIcon from '@/assets/icons/GitHub.astro'
 
 const TAGS = {
   NEXT: {
@@ -32,32 +34,42 @@ const PROJECTS = [
 ]
 ---
 
-{
-  PROJECTS.map(({ title, description, link, github, image, tags }) => (
-    <article>
-      <h3 class='text-lg font-semibold text-neutral-200 dark:text-white'>
-        {title}
-      </h3>
-      <p class='text-base font-normal text-gray-200 text-pretty'>
-        {description}
-      </p>
-      <ul class='flex flex-row gap-x-2'>
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 my-2 px-2 border border-white/10`}>
-              <tag.icon class='size-6' />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        loading='lazy'
-        class='rounded shadow-2xl shadow-white/10 aspect-video'
-        src={image}
-        alt={title}
-      />
-    </article>
-  ))
-}
+<section class='flex flex-col gap-y-16'>
+  {
+    PROJECTS.map(({ title, description, link, github, image, tags }) => (
+      <article>
+        <h3 class='text-lg font-semibold text-neutral-200 dark:text-white'>
+          {title}
+        </h3>
+        <p class='text-base font-normal text-gray-200 text-pretty'>
+          {description}
+        </p>
+        <ul class='flex flex-row gap-x-2'>
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 my-2 px-2 border border-white/10`}>
+                <tag.icon class='size-4' />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          loading='lazy'
+          class='rounded shadow-2xl shadow-white/10 aspect-video'
+          src={image}
+          alt={`Screenshot of ${title}`}
+        />
+        <footer>
+          {github && (
+            <ExpButton href={github[0]}>
+              <GitHubIcon class='size-6' />
+              See source code
+            </ExpButton>
+          )}
+        </footer>
+      </article>
+    ))
+  }
+</section>
