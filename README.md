@@ -12,6 +12,13 @@ npm create astro@latest -- --template basics
 
 ![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
+<div align="center">
+
+![Astro Badge](https://img.shields.io/badge/Astro-FF3E00?logo=astro&logoColor=fff&style=flat)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+
+</div>
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:

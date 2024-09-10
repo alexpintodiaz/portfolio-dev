@@ -1,20 +1,23 @@
+---
+const navLinks = [
+  { href: '#experience', text: 'Experience' },
+  { href: '#projects', text: 'Projects' },
+  { href: '#about', text: 'About' },
+]
+---
+
 <header
   class='flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto'>
   <nav class='flex flex-row gap-x-10 opacity-80'>
-    <a
-      href='#experience'
-      class='hover:bg-white/10 rounded-full px-1 sm:px-2.5 transition text-sm sm:text-base'
-      >Experience</a
-    >
-    <a
-      href='#projects'
-      class='hover:bg-white/10 rounded-full px-1 sm:px-2.5 transition text-sm sm:text-base'
-      >Projects</a
-    >
-    <a
-      href='#about'
-      class='hover:bg-white/10 rounded-full px-1 sm:px-2.5 transition text-sm sm:text-base'
-      >About</a
-    >
+    {
+      navLinks.map(({ href, text }) => (
+        <a
+        class='hover:bg-white/10 rounded-full px-1 sm:px-2.5 transition text-sm sm:text-base'
+          href={href}
+          aria-label={text.toLowerCase()}        >
+          {text}
+        </a>
+      ))
+    }
   </nav>
 </header>
