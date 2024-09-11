@@ -17,21 +17,27 @@ import Title from '@/components/Title.astro'
   description='Hire Alex to create your web application. Web Developer. Specialized in creating fullstack applications.'>
   <main class='px-4'>
     <SectionContainer class='pt-12 pb-8'>
-      <img
-        class='rounded-full size-16 mb-4'
-        src={alexLogo}
-        alt='Portfolio Logo'
-      />
-      <h1
-        class='text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6'>
-        Hi, Im Alex
-      </h1>
-      <h2 class='text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]'>
+      <div class='flex gap-x-4 mb-4'>
+        <img
+          width='90'
+          height='90'
+          class='rounded-full size-16 md:size-20 lg:size-24'
+          src={alexLogo}
+          alt='Portfolio Logo'
+        />
+        <h1
+          class='text-white text-3xl md:text-4xl lg:text-5xl font-bold content-center'>
+          Hi, Im Alex
+        </h1>
+      </div>
+
+      <h3
+        class='text-lg md:text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]'>
         Frontend developer with experience building web applications with React
         and TypeScript, always aiming to deliver high quality code that is
         readable, maintainable and scalable. If you think we could work
         together, please don't hesitate to reach out.
-      </h2>
+      </h3>
 
       <nav class='flex gap-x-3 mt-3'>
         <Social href='https://www.linkedin.com/in/pintodiaz/'>
