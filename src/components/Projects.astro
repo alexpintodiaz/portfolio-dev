@@ -37,38 +37,45 @@ const PROJECTS = [
 <div class='flex flex-col gap-y-16'>
   {
     PROJECTS.map(({ title, description, link, github, image, tags }) => (
-      <article>
-        <h3 class='text-lg font-semibold text-neutral-200 dark:text-white'>
-          {title}
-        </h3>
-        <p class='text-base font-normal text-gray-200 text-pretty'>
-          {description}
-        </p>
-        <ul class='flex flex-row gap-x-2'>
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 my-2 px-2 border border-white/10`}>
-                <tag.icon class='size-4' />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <img
-          loading='lazy'
-          class='rounded shadow-2xl shadow-white/10 aspect-video'
-          src={image}
-          alt={`Screenshot of ${title}`}
-        />
-        <footer>
-          {github && (
-            <ExpButton href={github[0]}>
-              <GitHubIcon class='size-6' />
-              See source code
-            </ExpButton>
-          )}
-        </footer>
+      <article class='flex flex-col space-x-0 space-y-8 md:flex-row md:space-x-8 md:space-y-0 mb-8'>
+        <div class='w-full md:w-1/2'>
+          <img
+            loading='lazy'
+            class='rounded-md shadow-2xl shadow-white/10 aspect-video'
+            src={image}
+            alt={`Screenshot of ${title}`}
+          />
+        </div>
+
+        <div class='w-full md:w-1/2 md:max-w-lg'>
+          <h3 class='text-lg font-semibold text-neutral-200 dark:text-white'>
+            {title}
+          </h3>
+          <div class='mt-2'>
+            <ul class='flex flex-row gap-x-2'>
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 my-2 px-2 border border-white/10`}>
+                    <tag.icon class='size-4' />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p class='text-base font-normal text-gray-200 text-pretty'>
+              {description}
+            </p>
+            <footer class='mt-2'>
+              {github && (
+                <ExpButton href={github[0]}>
+                  <GitHubIcon class='size-6' />
+                  Code
+                </ExpButton>
+              )}
+            </footer>
+          </div>
+        </div>
       </article>
     ))
   }
