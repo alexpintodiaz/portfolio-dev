@@ -9,6 +9,7 @@ import MailIcon from '@/assets/icons/Mail.astro'
 import Projects from '@/components/Projects.astro'
 import SectionContainer from '@/components/SectionContainer.astro'
 import Social from '@/components/Social.astro'
+import Title from '@/components/Title.astro'
 ---
 
 <Layout
@@ -49,17 +50,17 @@ import Social from '@/components/Social.astro'
     </SectionContainer>
 
     <SectionContainer id='experience'>
-      <h2 class='text-2xl font-semibold mb-5'>Experience</h2>
+      <Title>Experience</Title>
       <Experience />
     </SectionContainer>
 
     <SectionContainer id='projects'>
-      <h2 class='text-2xl font-semibold mb-5'>Projects</h2>
+      <Title>Projects</Title>
       <Projects />
     </SectionContainer>
 
     <SectionContainer id='about'>
-      <h2 class='text-2xl font-semibold mb-5'>About me</h2>
+      <Title>About me</Title>
       <AboutMe />
     </SectionContainer>
   </main>
