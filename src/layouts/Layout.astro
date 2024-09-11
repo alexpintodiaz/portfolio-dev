@@ -1,6 +1,7 @@
 ---
-import Header from '@/components/Header.astro'
+import '@fontsource/ubuntu';
 import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
 
 interface Props {
   title: string
@@ -38,7 +39,7 @@ const { title, description } = Astro.props
   }
 
   html {
-    font-family: system-ui, sans-serif;
+    font-family: 'Ubuntu', system-ui, sans-serif;
     scroll-behavior: smooth;
   }
 
