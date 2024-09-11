@@ -3,17 +3,41 @@ import React from '@/assets/icons/React.astro'
 import Tailwind from '@/assets/icons/Tailwind.astro'
 import ExpButton from './ExpButton.astro'
 import GitHubIcon from '@/assets/icons/GitHub.astro'
+import NestIcon from '@/assets/icons/Nestjs.astro'
+import PrismaIcon from '@/assets/icons/Prisma.astro'
+import MongoIcon from '@/assets/icons/Mongo.astro'
+import TypescriptIcon from '@/assets/icons/Typescript.astro'
 
 const TAGS = {
-  NEXT: {
+  REACT: {
     name: 'React',
-    class: 'bg-[#087EA4]/25 text-white',
+    class: 'bg-[#087EA4]/15 text-white',
     icon: React,
   },
+  TYPESCRIPT: {
+    name: 'TypeScript',
+    class: 'bg-[#3178C6]/15 text-white',
+    icon: TypescriptIcon,
+  },
   TAILWIND: {
-    name: 'Tailwind CSS',
-    class: 'bg-[#003159] text-white',
+    name: 'Tailwind',
+    class: 'bg-[#0EA5E9]/15 text-white',
     icon: Tailwind,
+  },
+  NEST: {
+    name: 'NestJS',
+    class: 'bg-[#E02316]/15 text-white',
+    icon: NestIcon,
+  },
+  PRISMA: {
+    name: 'Prisma',
+    class: 'bg-[#2D3748]/70 text-white',
+    icon: PrismaIcon,
+  },
+  MONGO: {
+    name: 'MongoDB',
+    class: 'bg-[#00ED64]/15 text-white',
+    icon: MongoIcon,
   },
 }
 
@@ -29,7 +53,14 @@ const PROJECTS = [
     ],
     image: '/projects/atmsim.png',
     // tags: ['React', 'TypeScript', 'Tailwind', 'MongoDB', 'Node.js', 'Nest'],
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [
+      TAGS.REACT,
+      TAGS.NEST,
+      TAGS.PRISMA,
+      TAGS.MONGO,
+      TAGS.TYPESCRIPT,
+      TAGS.TAILWIND,
+    ],
   },
 ]
 ---
@@ -51,13 +82,13 @@ const PROJECTS = [
           <h3 class='text-lg font-semibold text-neutral-200 dark:text-white'>
             {title}
           </h3>
-          <div class='mt-2'>
-            <ul class='flex flex-row gap-x-2'>
+          <div>
+            <ul class='flex flex-row flex-wrap gap-x-2'>
               {tags.map((tag) => (
                 <li>
                   <span
-                    class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 my-2 px-2 border border-white/10`}>
-                    <tag.icon class='size-4' />
+                    class={`flex gap-x-1.5 rounded-full text-sm ${tag.class} py-1 my-1 px-1.5 border border-white/10`}>
+                    <tag.icon class='size-4 mt-0.5' />
                     {tag.name}
                   </span>
                 </li>
