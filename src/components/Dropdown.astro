@@ -1,0 +1,78 @@
+---
+import GitCodeIcon from '@/assets/icons/GitCode.astro'
+
+interface Props {
+  frontendUrl: string
+  backendUrl: string
+}
+
+const { frontendUrl, backendUrl } = Astro.props
+---
+
+<div class='relative inline-block text-left'>
+  <button
+    type='button'
+    class='rounded-full border border-white/10 inline-flex justify-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-105 hover:bg-white/10 transition'
+    id='options-menu'
+    aria-haspopup='true'
+    aria-expanded='false'>
+    <GitCodeIcon class='size-6' />
+    Code
+  </button>
+
+  <div
+    class='hidden origin-top-right absolute right-0 mt-1 w-28 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-400 focus:outline-none'
+    role='menu'
+    aria-orientation='vertical'
+    aria-labelledby='options-menu'>
+    <div class='py-1' role='none'>
+      <a
+        href={frontendUrl}
+        class='block px-3 py-1.5 text-sm text-stone-700 hover:bg-zinc-200 hover:text-gray-900'
+        role='menuitem'
+        target='_blank'
+        rel='noopener noreferrer'>
+        Front Repo
+      </a>
+      <a
+        href={backendUrl}
+        class='block px-3 py-1.5 text-sm text-stone-700 hover:bg-zinc-200 hover:text-gray-900'
+        role='menuitem'
+        target='_blank'
+        rel='noopener noreferrer'>
+        Back Repo
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setupDropdown() {
+    const button = document.querySelector('#options-menu')
+    const menu = button?.nextElementSibling as HTMLElement | null
+
+    if (!button || !menu) return
+
+    button.addEventListener('click', () => {
+      menu.classList.toggle('hidden')
+      button.setAttribute(
+        'aria-expanded',
+        menu.classList.contains('hidden') ? 'false' : 'true'
+      )
+    })
+
+    document.addEventListener('click', (event) => {
+      if (
+        !button.contains(event.target as Node) &&
+        !menu.contains(event.target as Node)
+      ) {
+        menu.classList.add('hidden')
+        button.setAttribute('aria-expanded', 'false')
+      }
+    })
+  }
+
+  setupDropdown()
+
+  document.addEventListener('astro:page-load', setupDropdown)
+</script>

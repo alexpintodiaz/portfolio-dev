@@ -9,6 +9,7 @@ import NestIcon from '@/assets/icons/Nestjs.astro'
 import PrismaIcon from '@/assets/icons/Prisma.astro'
 import MongoIcon from '@/assets/icons/Mongo.astro'
 import TypescriptIcon from '@/assets/icons/Typescript.astro'
+import Dropdown from '@/components/Dropdown.astro'
 
 const TAGS = {
   REACT: {
@@ -49,10 +50,10 @@ const PROJECTS = [
     description:
       'Allows email authentication for deposits and withdrawals. The account transactions are also recorded for later reference.',
     link: 'https://atm-simulator-frontend.vercel.app/',
-    github: [
-      'https://github.com/alexpintodiaz/atm-simulator-frontend',
-      'https://github.com/alexpintodiaz/atm-simulator-backend',
-    ],
+    github: {
+      frontend: 'https://github.com/alexpintodiaz/atm-simulator-frontend',
+      backend: 'https://github.com/alexpintodiaz/atm-simulator-backend',
+    },
     image: '/projects/atmsim.png',
     // tags: ['React', 'TypeScript', 'Tailwind', 'MongoDB', 'Node.js', 'Nest'],
     tags: [
@@ -101,10 +102,7 @@ const PROJECTS = [
             </p>
             <footer class='mt-2 flex space-x-3'>
               {github && (
-                <ExpButton href={github[0]}>
-                  <GitCodeIcon class='size-6' />
-                  Code
-                </ExpButton>
+                <Dropdown frontendUrl={github.frontend} backendUrl={github.backend} />
               )}
               {link && (
                 <ExpButton href={link}>
