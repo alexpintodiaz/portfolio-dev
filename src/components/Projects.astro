@@ -3,6 +3,8 @@ import React from '@/assets/icons/React.astro'
 import Tailwind from '@/assets/icons/Tailwind.astro'
 import ExpButton from './ExpButton.astro'
 import GitHubIcon from '@/assets/icons/GitHub.astro'
+import GitCodeIcon from '@/assets/icons/GitCode.astro'
+import LinkIcon from '@/assets/icons/Link.astro'
 import NestIcon from '@/assets/icons/Nestjs.astro'
 import PrismaIcon from '@/assets/icons/Prisma.astro'
 import MongoIcon from '@/assets/icons/Mongo.astro'
@@ -45,7 +47,7 @@ const PROJECTS = [
   {
     title: 'ATM Simulator',
     description:
-      'Both Frontend and Backend created from scratch. I used React, TypeScript, and Tailwind. DB in Mongo DB. Backend in Node.js with Nest',
+      'Allows email authentication for deposits and withdrawals. The account transactions are also recorded for later reference.',
     link: 'https://atm-simulator-frontend.vercel.app/',
     github: [
       'https://github.com/alexpintodiaz/atm-simulator-frontend',
@@ -97,11 +99,17 @@ const PROJECTS = [
             <p class='text-base font-normal text-gray-200 text-pretty'>
               {description}
             </p>
-            <footer class='mt-2'>
+            <footer class='mt-2 flex space-x-3'>
               {github && (
                 <ExpButton href={github[0]}>
-                  <GitHubIcon class='size-6' />
+                  <GitCodeIcon class='size-6' />
                   Code
+                </ExpButton>
+              )}
+              {link && (
+                <ExpButton href={link}>
+                  <LinkIcon class='size-[22px]' />
+                  Preview
                 </ExpButton>
               )}
             </footer>
