@@ -1,30 +1,54 @@
 ---
-import ExperienceItem from './ExperienceItem.astro'
-
 const EXPERIENCE = [
   {
     role: 'Full Stack Developer',
     company: 'Citec Solutions',
+    location: 'Spain - Remote',
     date: 'October 2023 - Present',
-    description:
-      'Improve of data shown through app using charts libraries. Develop and implement various APIs, focusing on the creation and configuration of endpoints. Facilitate the execution of database queries, which are essential for data extraction and manupulation as needed. Write, debug and review code to perform certain tasks and/or incorporate new features.',
-    isCurrent: true,
+    description: `Improve of data shown through app using charts libraries. Develop and implement various APIs, 
+      focusing on the creation and configuration of endpoints. Facilitate the execution of database 
+      queries, which are essential for data extraction and manupulation as needed. Write, debug and 
+      review code to perform certain tasks and/or incorporate new features.`,
   },
   {
     role: 'Frontend Developer',
     company: 'Citec Solutions',
+    location: 'Spain - Remote',
     date: 'May 2022 - October 2023',
-    description:
-      'Developed a web application using React and Typescript. Creation of Figma-based components, styled with CSS and Tailwind. Use of Jest and React Testing Library for unit testing.',
+    description: `Developed a web application using React and Typescript. Creation of Figma-based components, 
+      styled with CSS and Tailwind. Use of Jest and React Testing Library for unit testing.`,
   },
 ]
 ---
 
-<ol class='mt-8'>
+<ol class='relative space-y-6 border-s-2 border-neutral-300'>
   {
-    EXPERIENCE.map((experience) => (
-      <li class='mb-10'>
-        <ExperienceItem {...experience} />
+    EXPERIENCE.map(({ role, company, location, date, description }) => (
+      <li class='ms-5 mt-1'>
+        <div
+          class={
+            'absolute -start-[6.5px] mt-2 h-3 w-3 rounded-full border border-neutral-400 bg-neutral-200'
+          }
+        />
+        <time class='mb-2 font-mono text-xs font-normal leading-none text-gray-500'>
+          {date}
+        </time>
+        <div class='mt-2 flex flex-col space-y-0.5'>
+          <h3 class='flex items-center mb-1 text-lg font-semibold text-neutral-200'>
+            {role}
+          </h3>
+          <div class='flex flex-row items-center gap-x-3 mb-2'>
+            <h4>
+              <i>{company}</i>
+            </h4>
+            <span class='ml-2 text-xs font-normal text-gray-500'>
+              {location}
+            </span>
+          </div>
+          <p class='mb-4 text-base font-normal text-gray-200 text-pretty'>
+            {description}
+          </p>
+        </div>
       </li>
     ))
   }
