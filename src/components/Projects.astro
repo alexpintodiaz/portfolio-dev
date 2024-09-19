@@ -48,7 +48,7 @@ const PROJECTS = [
   {
     title: 'ATM Simulator',
     description:
-      'Allows email authentication for deposits and withdrawals. The account transactions are also recorded for later reference.',
+      'Allows email authentication for deposits and withdrawals. The account transactions are also recorded for later reference. Frontend hosted on Vercel. Backend hosted on Render. Used CI/CD with GitHub, pushing changes to main branch from dev branch.',
     link: 'https://atm-simulator-frontend.vercel.app/',
     github: {
       frontend: 'https://github.com/alexpintodiaz/atm-simulator-frontend',
@@ -102,7 +102,10 @@ const PROJECTS = [
             </p>
             <footer class='mt-2 flex space-x-3'>
               {github && (
-                <Dropdown frontendUrl={github.frontend} backendUrl={github.backend} />
+                <Dropdown
+                  frontendUrl={github.frontend}
+                  backendUrl={github.backend}
+                />
               )}
               {link && (
                 <ExpButton href={link}>
