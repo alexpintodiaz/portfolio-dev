@@ -1,15 +1,14 @@
 ---
-import React from '@/assets/icons/React.astro'
-import Tailwind from '@/assets/icons/Tailwind.astro'
-import ExpButton from './ExpButton.astro'
-import GitHubIcon from '@/assets/icons/GitHub.astro'
-import GitCodeIcon from '@/assets/icons/GitCode.astro'
+import DatabaseIcon from '@/assets/icons/Database.astro'
 import LinkIcon from '@/assets/icons/Link.astro'
+import MongoIcon from '@/assets/icons/Mongo.astro'
 import NestIcon from '@/assets/icons/Nestjs.astro'
 import PrismaIcon from '@/assets/icons/Prisma.astro'
-import MongoIcon from '@/assets/icons/Mongo.astro'
+import React from '@/assets/icons/React.astro'
+import Tailwind from '@/assets/icons/Tailwind.astro'
 import TypescriptIcon from '@/assets/icons/Typescript.astro'
-import Dropdown from '@/components/Dropdown.astro'
+import ViteIcon from '@/assets/icons/Vite.astro'
+import ExpButton from './ExpButton.astro'
 
 const TAGS = {
   REACT: {
@@ -60,7 +59,6 @@ const PROJECTS = [
       backend: 'https://github.com/alexpintodiaz/atm-simulator-backend',
     },
     image: '/projects/atmsim.png',
-    // tags: ['React', 'TypeScript', 'Tailwind', 'MongoDB', 'Node.js', 'Nest'],
     tags: [
       TAGS.REACT,
       TAGS.NEST,
@@ -102,8 +100,7 @@ const PROJECTS = [
             </ul>
           </div>
         </div>
-
-        <div class='w-full md:w-1/2 md:max-w-lg'>
+        <div class='flex flex-col justify-center w-full md:w-7/12 md:max-w-lg'>
           <h3 class='text-lg font-semibold text-neutral-200 dark:text-white'>
             {title}
           </h3>
@@ -111,16 +108,22 @@ const PROJECTS = [
             <p class='text-sm font-normal text-gray-200 text-pretty'>
               {description}
             </p>
-            <footer class='mt-2 flex space-x-3'>
-              {github && (
-                <Dropdown
-                  frontendUrl={github.frontend}
-                  backendUrl={github.backend}
-                />
+            <footer class='mt-2 flex flex-wrap space-x-3'>
+              {github.frontend && (
+                <ExpButton href={github.frontend}>
+                  <ViteIcon class='size-5' />
+                  Front Repo
+                </ExpButton>
+              )}
+              {github.backend && (
+                <ExpButton href={github.backend}>
+                  <DatabaseIcon class='size-5' />
+                  Back Repo
+                </ExpButton>
               )}
               {link && (
                 <ExpButton href={link}>
-                  <LinkIcon class='size-[22px]' />
+                  <LinkIcon class='size-[18px]' />
                   Preview
                 </ExpButton>
               )}
