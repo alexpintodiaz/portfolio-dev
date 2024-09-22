@@ -74,14 +74,22 @@ const PROJECTS = [
 <div class='flex flex-col gap-y-16'>
   {
     PROJECTS.map(({ title, description, link, github, image, tags }) => (
-      <article class='flex flex-col space-x-0 space-y-8 md:flex-row md:space-x-8 md:space-y-0 mb-8'>
+      <article class='flex flex-col space-x-0 space-y-4 md:flex-row md:space-x-8 md:space-y-0 mb-8'>
         <div class='flex flex-col justify-between w-full md:w-1/2'>
-          <img
-            loading='lazy'
-            class='rounded-md shadow-2xl shadow-white/10 aspect-video transition duration-500 lg:hover:scale-105'
-            src={image}
-            alt={`Screenshot of ${title}`}
-          />
+          <h3 class='md:hidden text-lg text-center font-semibold text-neutral-200 mb-2'>
+            {title}
+          </h3>
+          <div class='flex justify-center max-md:px-5'>
+            <img
+              width='450'
+              height='450'
+              loading='lazy'
+              class='rounded-md shadow-2xl shadow-white/10 aspect-video transition duration-500 lg:hover:scale-105'
+              src={image}
+              alt={`Screenshot of ${title}`}
+            />
+          </div>
+
           <div class='flex flex-col border border-dashed border-violet-400 mt-4 py-1 rounded-md'>
             <h4 class='flex justify-center text-lg font-semibold text-neutral-200'>
               Tech Stack
@@ -100,8 +108,8 @@ const PROJECTS = [
             </ul>
           </div>
         </div>
-        <div class='flex flex-col justify-center w-full md:w-7/12 md:max-w-lg'>
-          <h3 class='text-lg font-semibold text-neutral-200 dark:text-white'>
+        <div class='flex flex-col justify-center w-full md:w-7/12'>
+          <h3 class='text-lg font-semibold text-neutral-200 max-md:hidden'>
             {title}
           </h3>
           <div>
