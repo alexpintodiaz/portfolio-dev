@@ -1,0 +1,54 @@
+---
+import alexLogo from '@/assets/img/alex.webp?url'
+import GitHubIcon from '@/assets/icons/GitHub.astro'
+import LinkedInIcon from '@/assets/icons/LinkedIn.astro'
+import MailIcon from '@/assets/icons/Mail.astro'
+import Social from '@/components/Social.astro'
+---
+
+<div class="flex flex-col justify-around md:flex-row ">
+
+    <article class=" md:w-9/12">
+
+        <div class='flex gap-x-4 mb-4'>
+            <img
+              width='90'
+              height='90'
+              class='rounded-full size-16 md:size-20 lg:size-24'
+              src={alexLogo}
+              alt='Portfolio Logo'
+            />
+            <h1
+              class='text-white text-3xl md:text-4xl lg:text-5xl font-bold content-center'>
+              Hi, Im Alex
+            </h1>
+          </div>
+          
+          <h3 class='text-lg md:text-xl lg:text-2xl opacity-80 text-pretty max-w-[700px]'>
+            A Full Stack Web Developer based in Colombia with over 3 years of experience.
+          </h3>
+
+
+    </article>
+
+    
+      
+      <nav class='flex flex-row md:flex-col justify-evenly max-md:pt-4'>
+        <Social href='https://www.linkedin.com/in/pintodiaz/'>
+          <LinkedInIcon class='size-6' />
+          LinkedIn
+        </Social>
+        <Social href='https://github.com/alexpintodiaz'>
+          <GitHubIcon class='size-6' />
+          GitHub
+        </Social>
+        <Social href='mailto:alexanderpintodiaz@gmail.com'>
+          <MailIcon class='size-6' />
+          Contact me
+        </Social>
+      </nav>
+
+
+</div>
+
+
